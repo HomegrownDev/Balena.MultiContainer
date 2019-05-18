@@ -9,7 +9,7 @@ COPY startup.sh /
 
 WORKDIR /usr/src/app
 
-RUN [ "install_packages", "curl", "dnsmasq" ,"nano", "wireless-tools", "nmcli" ]
+RUN [ "install_packages", "curl", "dnsmasq" ,"nano", "wireless-tools" ]
 
 RUN curl https://api.github.com/repos/balena-io/wifi-connect/releases/latest -s | \ 
     grep -hoG '"browser_download_url": ".*.rpi.tar.gz"' | \
