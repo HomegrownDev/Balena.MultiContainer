@@ -1,0 +1,12 @@
+version: '0.0.1'
+services:
+  wifi:
+    build: ./containers/wifi-connect
+    expose:
+      - "80"
+#  node-app:
+#    build: ./containers/node-app    
+#    depends_on:
+#      - wifi
+#    ports:
+#      - "80:80"
