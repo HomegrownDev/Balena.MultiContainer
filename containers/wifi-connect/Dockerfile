@@ -1,6 +1,7 @@
 #Initial Dockerfile for WiFi-Connect
-
 FROM balenalib/rpi-debian-node
+
+ENV INITSYSTEM on
 
 EXPOSE 80
 
@@ -8,7 +9,7 @@ COPY startup.sh /
 
 WORKDIR /usr/src/app
 
-RUN [ "install_packages", "curl", "dnsmasq", "wireless-tools" ]
+RUN [ "install_packages", "curl", "dnsmasq" ,"nano", "wireless-tools" ]
 
 RUN curl https://api.github.com/repos/balena-io/wifi-connect/releases/latest -s | \ 
     grep -hoG '"browser_download_url": ".*.rpi.tar.gz"' | \
