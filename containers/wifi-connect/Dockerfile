@@ -18,4 +18,4 @@ RUN curl https://api.github.com/repos/balena-io/wifi-connect/releases/latest -s 
 
 HEALTHCHECK --interval=30s --timeout=30s --start-period=5s --retries=3 CMD [ "curl --interace wlan0 --fail https://www.githubstatus.com/ || exit 1" ]
 
-#ENTRYPOINT [ "sh", "/startup.sh" ]
+ENTRYPOINT [ "sh", "/startup.sh" ]
