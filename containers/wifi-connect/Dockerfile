@@ -16,6 +16,6 @@ RUN curl https://api.github.com/repos/balena-io/wifi-connect/releases/latest -s 
     xargs -n1 curl -Ls \ | \
     tar -xvz -C /usr/src/app
 
-HEALTHCHECK --interval=30s --timeout=30s --start-period=5s --retries=3 CMD [ "curl --fail https://www.githubstatus.com/ || exit 1" ]
+HEALTHCHECK --interval=30s --timeout=30s --start-period=5s --retries=3 CMD [ "curl --interace wlan0 --fail https://www.githubstatus.com/ || exit 1" ]
 
 ENTRYPOINT [ "sh", "/startup.sh" ]
